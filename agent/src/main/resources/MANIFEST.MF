@@ -1,7 +1,5 @@
 Manifest-Version: 1.0
-Premain-Class: com.anbai.lingxe.agent.Agent
-Main-Class: com.anbai.lingxe.agent.Agent
-Agent-Class: com.anbai.lingxe.agent.Agent
+Premain-Class: cn.org.javaweb.agent.Agent
 Can-Retransform-Classes: true
 Can-Redefine-Classes: true
 Can-Set-Native-Method-Prefix: true
