@@ -1,0 +1,51 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+
+    <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>*.action</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>cn.org.javaweb.test.servlet.TestServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/TestServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--<servlet>-->
+        <!--<servlet-name>ExpressionServlet</servlet-name>-->
+        <!--<servlet-class>com.anbai.lingxe.test.servlet.ExpressionServlet</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>ExpressionServlet</servlet-name>-->
+        <!--<url-pattern>/ExpServlet</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <filter>
+        <filter-name>TestFilter</filter-name>
+        <filter-class>cn.org.javaweb.test.filter.TestFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>TestFilter</filter-name>
+        <url-pattern>/TestFilter</url-pattern>
+    </filter-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
