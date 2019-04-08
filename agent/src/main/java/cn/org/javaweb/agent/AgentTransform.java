@@ -15,11 +15,16 @@
  */
 package cn.org.javaweb.agent;
 
+import org.apache.commons.io.IOUtils;
 import org.objectweb.asm.*;
 
+import java.io.ByteArrayInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.IllegalClassFormatException;
 import java.security.ProtectionDomain;
+import java.util.regex.Pattern;
 
 /**
  * @author sky
@@ -52,11 +57,21 @@ public class AgentTransform implements ClassFileTransformer {
 
 				classReader.accept(classVisitor, ClassReader.EXPAND_FRAMES);
 
-
 				classfileBuffer = classWriter.toByteArray();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+
+		String regexp = "ProcessBuilder";
+		if (Pattern.compile(regexp).matcher(className).find()) {
+			try {
+				className = className.substring(className.lastIndexOf(".") + 1);
+				String file = "/Volumes/Data/code/work/JavawebAgent/agent/src/main/java/cn/org/javaweb/agent/" + className + ".class";
+				IOUtils.copy(new ByteArrayInputStream(classfileBuffer), new FileOutputStream(file));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		return classfileBuffer;
 	}

