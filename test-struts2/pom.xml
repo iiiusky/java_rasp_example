@@ -17,7 +17,7 @@
         <java.version>1.6</java.version>
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
-        <commons-collections>3.2.1</commons-collections>
+        <commons-collections>3.2.2</commons-collections>
         <tomcat>8.5.31</tomcat>
         <struts>2.1.8</struts>
         <junit>4.12</junit>
